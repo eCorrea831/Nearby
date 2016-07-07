@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Nearby" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rf1-Kv-tIU">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="hso-F5-M5z">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="H3c-9S-VYk">
+                                <rect key="frame" x="20" y="564" width="560" height="29"/>
+                                <segments>
+                                    <segment title="street"/>
+                                    <segment title="hybrid"/>
+                                    <segment title="satellite"/>
+                                </segments>
+                                <color key="tintColor" red="0.70985168218612671" green="0.4268738329410553" blue="0.90900707244873047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="changeMapType:" destination="BYZ-38-t0r" eventType="valueChanged" id="F5l-Lg-5he"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rf1-Kv-tIU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="1pa-dE-TlF"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rf1-Kv-tIU" secondAttribute="bottom" id="6Xo-b6-p5E"/>
+                            <constraint firstItem="hso-F5-M5z" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="8Eq-nN-agr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="H3c-9S-VYk" secondAttribute="bottom" constant="8" id="Bmn-fM-0zq"/>
+                            <constraint firstItem="rf1-Kv-tIU" firstAttribute="top" secondItem="hso-F5-M5z" secondAttribute="bottom" constant="-64" id="HJc-b5-mgE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rf1-Kv-tIU" secondAttribute="trailing" constant="-20" id="JRY-ow-naz"/>
+                            <constraint firstItem="H3c-9S-VYk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LYC-mA-VCS"/>
+                            <constraint firstItem="hso-F5-M5z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="idI-5v-WYH"/>
+                            <constraint firstItem="rf1-Kv-tIU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="xNQ-xf-7NJ"/>
+                            <constraint firstItem="H3c-9S-VYk" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="14:15" id="zze-oY-vXZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="rf1-Kv-tIU" id="6PP-Zq-jRK"/>
+                        <outlet property="searchBar" destination="hso-F5-M5z" id="WB0-XZ-1gh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="470" y="429"/>
+        </scene>
+    </scenes>
+</document>
